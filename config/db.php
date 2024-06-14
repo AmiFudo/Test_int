@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'sqlite:'.__DIR__ . '/sqlite.db',
+    'dsn' => 'sqlite:'.__DIR__ . '/test.db',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',

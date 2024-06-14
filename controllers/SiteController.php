@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Rate;
 
 class SiteController extends Controller
 {
@@ -59,10 +60,18 @@ class SiteController extends Controller
      *
      * @return string
      */
+
+    // Вывод тарифа
     public function actionIndex()
     {
-        return $this->render('index');
+        
+        $rate = new Rate();
+        $rate__list = Rate::find()->all();
+        return $this->render('index', [
+            'rate' => $rate__list,
+        ]);
     }
+    // Вывод тарифа
 
     /**
      * Login action.
