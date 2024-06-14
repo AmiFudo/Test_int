@@ -161,6 +161,14 @@ p{
     position: relative;
 }
 
+.rate .rate__list .rate__list_element .rate__list_element_speed .rate__list_element_speed_squar .rate__list_element_speed_setting_block input{
+    width: 30%;
+    border: 1px solid #2214eb;
+    color: #2214eb;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
 .rate .rate__list .rate__list_element .rate__list_element_speed .rate__list_element_speed_squar .rate__list_element_speed_setting{
     background: url(../assets/pencil.png);
     background-position: center;
@@ -170,6 +178,26 @@ p{
     height: 15px;
     position: absolute;
     right: -5px;
+    top: 6px;
+    cursor: pointer;
+}
+
+.rate .rate__list .rate__list_element .rate__list_element_speed .rate__list_element_speed_squar .rate__list_element_speed_setting_block{
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.rate .rate__list .rate__list_element .rate__list_element_speed .rate__list_element_speed_squar .rate__list_element_speed_setting_block .rate__list_element_speed_setting{
+    background: url(../assets/check.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 20px;
     top: 6px;
     cursor: pointer;
 }

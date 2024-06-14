@@ -22,16 +22,20 @@ $this->title = 'Тарифы';
                     <div class="rate__list_element_speed_squar">
                         <div class="rate__list_element_speed_squar_info">
                             <p>до</p>
-                            <p class="speed">
-                                <?=$value->speed?>
+                            <p class="speed <?=$value->id?>">
+                                <span class="value"><?=$value->speed?></span>
                                 <?php
                                     if (!Yii::$app->user->isGuest) {
                                         ?>
-                                        <span class="rate__list_element_speed_setting"></span>
+                                        <span class="rate__list_element_speed_setting" data-id="<?=$value->id?>"></span>
                                         <?php
                                     }
                                 ?>
                             </p>
+                            <div class="rate__list_element_speed_setting_block <?=$value->id?>">
+                                <input type="text" value="<?=$value->speed?>">
+                                <span class="rate__list_element_speed_setting save" data-id="<?=$value->id?>"></span>
+                            </div>
                             <p>Мбит/с</p>
                         </div>
                     </div>
