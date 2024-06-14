@@ -66,6 +66,25 @@ class SiteController extends Controller
         ]);
     }
     // Вывод тарифа
+
+
+    // Обновление скорости тарифа
+    public function actionUpdaterate()
+    {
+        
+        $id = $_GET['id'];
+
+        $new_speed = $_GET['speed'];
+
+        $model = new Rate();
+
+        $model = Rate::findOne($id);
+        $model->speed = $new_speed;
+        $model->update();
+
+    }
+
+    // Обновление скорости тарифа
     
 
     public function actionLogin()

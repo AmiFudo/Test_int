@@ -17,11 +17,33 @@
         
         id = $(this).data('id');
 
-        $('.rate__list_element_speed_setting_block.'+id+'').css('display','none');
-        $('.speed.'+id+'').css('display','block');
         val = $('.rate__list_element_speed_setting_block.'+id+' input').val();
+        
+        // Отправление данных ajax запросом
 
-        $('.speed.'+id+' .value').text(val);
+        if($.isNumeric(val)){
+
+            $('.rate__list_element_speed_setting_block.'+id+'').css('display','none');
+            $('.speed.'+id+'').css('display','block');
+
+            $('.speed.'+id+' .value').text(val);
+
+            $.ajax({
+                url: '/basic/web/index.php?r=site/updaterate',
+                method: 'get',
+                dataType: 'html',
+                data: {id: id, speed: val},
+                success: function(data){
+                    console.log(data);
+                }
+            })
+        } else {
+            alert('Значение должно быть числом');
+        }
+
+
+
+        // Отправление данных ajax запросом
 
     });
 
